@@ -21,6 +21,7 @@
 		8E3B2C3F1C8971B900E40B14 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */; };
 		8E3B2C411C8971B900E40B14 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C3E1C8971B900E40B14 /* Event.swift */; };
 		8E3B2C451C8977C800E40B14 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */; };
+		8E3B2C471C8A055600E40B14 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C461C8A055600E40B14 /* EventCollection.swift */; };
 		BC90FE6BDD1F0E48D9C41611 /* libPods-MyCalendarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7E61BEFA3513ECD905AE8F /* libPods-MyCalendarUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		8E3B2C3E1C8971B900E40B14 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		8E3B2C461C8A055600E40B14 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
 		ABFCA755606FA3B5B003EF0F /* Pods-MyCalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarUITests/Pods-MyCalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2D431E68059D20954787A5B /* Pods-MyCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarTests/Pods-MyCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C88753A6616225041FCD325E /* libPods-MyCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,14 +142,15 @@
 				8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */,
 				8E3B2C3E1C8971B900E40B14 /* Event.swift */,
 				8E3B2C041C88142F00E40B14 /* AppDelegate.swift */,
-				8E3B2C061C88142F00E40B14 /* FirstViewController.swift */,
 				8E3B2C081C88142F00E40B14 /* SecondViewController.swift */,
 				8E3B2C0A1C88143000E40B14 /* Main.storyboard */,
+				8E3B2C061C88142F00E40B14 /* FirstViewController.swift */,
 				8E3B2C0D1C88143000E40B14 /* Assets.xcassets */,
 				8E3B2C0F1C88143000E40B14 /* LaunchScreen.storyboard */,
 				8E3B2C121C88143000E40B14 /* Info.plist */,
 				8E3B2C341C89273800E40B14 /* CreateEventViewController.swift */,
 				8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */,
+				8E3B2C461C8A055600E40B14 /* EventCollection.swift */,
 			);
 			path = MyCalendar;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				8E3B2C351C89273800E40B14 /* CreateEventViewController.swift in Sources */,
 				8E3B2C411C8971B900E40B14 /* Event.swift in Sources */,
 				8E3B2C451C8977C800E40B14 /* EventDetailViewController.swift in Sources */,
+				8E3B2C471C8A055600E40B14 /* EventCollection.swift in Sources */,
 				8E3B2C3F1C8971B900E40B14 /* EventTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

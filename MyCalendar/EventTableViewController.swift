@@ -10,7 +10,11 @@ import UIKit
 
 class EventTableViewController: UITableViewController {
     
-    var events = [Event]()
+    var events:EventCollection?{
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,12 @@ class EventTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // Try loading a saved version first
+        if let eventList = EventCollection.loadSaved() {
+            self.events = eventList
+            print("loaded Save EventList")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +46,7 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.events?.items.count ?? 0
     }
 
     
@@ -44,7 +54,7 @@ class EventTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        let currentEvent = events[indexPath.row]
+        let currentEvent = self.events!.items[indexPath.row]
         
         cell.textLabel?.text = currentEvent.title
 
@@ -97,7 +107,7 @@ class EventTableViewController: UITableViewController {
 
         // Pass the selected object to the new view controller.
         if let indexPath = self.tableView.indexPathForSelectedRow{
-            let selectedEvent = events[indexPath.row]
+            let selectedEvent = events!.items[indexPath.row]
             detailScene?.currentEvent = selectedEvent
         }
     }
