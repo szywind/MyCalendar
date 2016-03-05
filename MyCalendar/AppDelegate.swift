@@ -41,23 +41,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func eventFilePath() -> String {
-        let paths = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)
-        let filePath = paths[0].URLByAppendingPathComponent("eventFile.plist")
-        return filePath.path!
-    }
-    
-    func saveEvent(event: Event) -> Bool {
-        let success = NSKeyedArchiver.archiveRootObject(event, toFile: eventFilePath())
-        assert(success, "failed to write archive")
-        return success
-    }
-    
-    func readFeed(completion: (event: Event?) -> Void) {
-        let path = eventFilePath()
-        let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
-        completion(event: unarchivedObject as? Event)
-    }
+//    func eventFilePath() -> String {
+//        let paths = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)
+//        let filePath = paths[0].URLByAppendingPathComponent("eventFile.plist")
+//        return filePath.path!
+//    }
+//    
+//    func saveEvent(event: Event) -> Bool {
+//        let success = NSKeyedArchiver.archiveRootObject(event, toFile: eventFilePath())
+//        assert(success, "failed to write archive")
+//        return success
+//    }
+//    
+//    func readFeed(completion: (event: Event?) -> Void) {
+//        let path = eventFilePath()
+//        let unarchivedObject = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
+//        completion(event: unarchivedObject as? Event)
+//    }
 
 }
 

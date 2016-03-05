@@ -12,14 +12,16 @@ class EventDetailViewController: UIViewController {
 
     var currentEvent: Event?
     
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var detail: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        detailLabel.text = currentEvent?.date
+        detail.layer.borderColor = UIColor.lightGrayColor().CGColor
+        detail.layer.borderWidth = 1.0
+        detail.layer.cornerRadius = 5.0
+        detail.text = currentEvent!.detail
     }
 
     override func didReceiveMemoryWarning() {
