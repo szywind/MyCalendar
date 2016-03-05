@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C728C9EEE4141B96BA1C709 /* libPods-MyCalendarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C35448A11DF27EF9C6BD41 /* libPods-MyCalendarTests.a */; };
-		549E344D7472F9E1C48A057F /* libPods-MyCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C88753A6616225041FCD325E /* libPods-MyCalendar.a */; };
 		8E3B2C051C88142F00E40B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C041C88142F00E40B14 /* AppDelegate.swift */; };
 		8E3B2C071C88142F00E40B14 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C061C88142F00E40B14 /* FirstViewController.swift */; };
 		8E3B2C091C88143000E40B14 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C081C88142F00E40B14 /* SecondViewController.swift */; };
@@ -18,7 +16,15 @@
 		8E3B2C1C1C88143000E40B14 /* MyCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C1B1C88143000E40B14 /* MyCalendarTests.swift */; };
 		8E3B2C271C88143000E40B14 /* MyCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C261C88143000E40B14 /* MyCalendarUITests.swift */; };
 		8E3B2C351C89273800E40B14 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C341C89273800E40B14 /* CreateEventViewController.swift */; };
-		BC90FE6BDD1F0E48D9C41611 /* libPods-MyCalendarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7E61BEFA3513ECD905AE8F /* libPods-MyCalendarUITests.a */; };
+		8E3B2C3F1C8971B900E40B14 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */; };
+		8E3B2C411C8971B900E40B14 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C3E1C8971B900E40B14 /* Event.swift */; };
+		8E3B2C451C8977C800E40B14 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */; };
+		8E3B2C471C8A055600E40B14 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C461C8A055600E40B14 /* EventCollection.swift */; };
+		8E3B2C511C8A37A100E40B14 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3B2C501C8A37A100E40B14 /* FSCalendar.framework */; };
+		8E3B2C551C8AAF7A00E40B14 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */; };
+		ABCA0D185BB2863C61F44FDA /* Pods_MyCalendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4CFC416E6E275C16C4A8CF /* Pods_MyCalendarUITests.framework */; };
+		C26121F8D99387C6A1EF9A5C /* Pods_MyCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D8EE7E552F006560394C75 /* Pods_MyCalendar.framework */; };
+		D91EF678DBB08E0AA3E809AB /* Pods_MyCalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1340483A1E3195A1973931E3 /* Pods_MyCalendarTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0098EBA2C1ADB2EE5CEAD1C1 /* Pods-MyCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendar/Pods-MyCalendar.debug.xcconfig"; sourceTree = "<group>"; };
-		5A7E61BEFA3513ECD905AE8F /* libPods-MyCalendarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyCalendarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1340483A1E3195A1973931E3 /* Pods_MyCalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15D8EE7E552F006560394C75 /* Pods_MyCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B05C18D6E7C8A6803734AAF /* Pods-MyCalendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarUITests/Pods-MyCalendarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7B52C54417171CE664D250C9 /* Pods-MyCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendar/Pods-MyCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		8E3B2C011C88142F00E40B14 /* MyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,11 +65,18 @@
 		8E3B2C261C88143000E40B14 /* MyCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarUITests.swift; sourceTree = "<group>"; };
 		8E3B2C281C88143000E40B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3B2C341C89273800E40B14 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		8E3B2C3E1C8971B900E40B14 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		8E3B2C461C8A055600E40B14 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
+		8E3B2C4C1C8A342600E40B14 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = "Pods/../build/Debug-iphoneos/FSCalendar.framework"; sourceTree = "<group>"; };
+		8E3B2C501C8A37A100E40B14 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = "Pods/../build/Debug-iphoneos/FSCalendar.framework"; sourceTree = "<group>"; };
+		8E3B2C531C8A792600E40B14 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ABFCA755606FA3B5B003EF0F /* Pods-MyCalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarUITests/Pods-MyCalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE4CFC416E6E275C16C4A8CF /* Pods_MyCalendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCalendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D431E68059D20954787A5B /* Pods-MyCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarTests/Pods-MyCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C88753A6616225041FCD325E /* libPods-MyCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D894D09D5CE65D1A341E72B8 /* Pods-MyCalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarTests/Pods-MyCalendarTests.release.xcconfig"; sourceTree = "<group>"; };
-		F1C35448A11DF27EF9C6BD41 /* libPods-MyCalendarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyCalendarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				549E344D7472F9E1C48A057F /* libPods-MyCalendar.a in Frameworks */,
+				8E3B2C511C8A37A100E40B14 /* FSCalendar.framework in Frameworks */,
+				C26121F8D99387C6A1EF9A5C /* Pods_MyCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C728C9EEE4141B96BA1C709 /* libPods-MyCalendarTests.a in Frameworks */,
+				D91EF678DBB08E0AA3E809AB /* Pods_MyCalendarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC90FE6BDD1F0E48D9C41611 /* libPods-MyCalendarUITests.a in Frameworks */,
+				ABCA0D185BB2863C61F44FDA /* Pods_MyCalendarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,14 +146,20 @@
 		8E3B2C031C88142F00E40B14 /* MyCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				8E3B2C3C1C8971B900E40B14 /* EventTableViewController.swift */,
+				8E3B2C3E1C8971B900E40B14 /* Event.swift */,
 				8E3B2C041C88142F00E40B14 /* AppDelegate.swift */,
-				8E3B2C061C88142F00E40B14 /* FirstViewController.swift */,
 				8E3B2C081C88142F00E40B14 /* SecondViewController.swift */,
 				8E3B2C0A1C88143000E40B14 /* Main.storyboard */,
+				8E3B2C061C88142F00E40B14 /* FirstViewController.swift */,
 				8E3B2C0D1C88143000E40B14 /* Assets.xcassets */,
 				8E3B2C0F1C88143000E40B14 /* LaunchScreen.storyboard */,
 				8E3B2C121C88143000E40B14 /* Info.plist */,
 				8E3B2C341C89273800E40B14 /* CreateEventViewController.swift */,
+				8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */,
+				8E3B2C461C8A055600E40B14 /* EventCollection.swift */,
+				8E3B2C531C8A792600E40B14 /* Bridging.h */,
+				8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */,
 			);
 			path = MyCalendar;
 			sourceTree = "<group>";
@@ -164,9 +185,11 @@
 		ACB06CF98E3FD1E07B970D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C88753A6616225041FCD325E /* libPods-MyCalendar.a */,
-				F1C35448A11DF27EF9C6BD41 /* libPods-MyCalendarTests.a */,
-				5A7E61BEFA3513ECD905AE8F /* libPods-MyCalendarUITests.a */,
+				8E3B2C501C8A37A100E40B14 /* FSCalendar.framework */,
+				8E3B2C4C1C8A342600E40B14 /* FSCalendar.framework */,
+				15D8EE7E552F006560394C75 /* Pods_MyCalendar.framework */,
+				1340483A1E3195A1973931E3 /* Pods_MyCalendarTests.framework */,
+				AE4CFC416E6E275C16C4A8CF /* Pods_MyCalendarUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -436,10 +459,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3B2C551C8AAF7A00E40B14 /* EventTableViewCell.swift in Sources */,
 				8E3B2C091C88143000E40B14 /* SecondViewController.swift in Sources */,
 				8E3B2C051C88142F00E40B14 /* AppDelegate.swift in Sources */,
 				8E3B2C071C88142F00E40B14 /* FirstViewController.swift in Sources */,
 				8E3B2C351C89273800E40B14 /* CreateEventViewController.swift in Sources */,
+				8E3B2C411C8971B900E40B14 /* Event.swift in Sources */,
+				8E3B2C451C8977C800E40B14 /* EventDetailViewController.swift in Sources */,
+				8E3B2C471C8A055600E40B14 /* EventCollection.swift in Sources */,
+				8E3B2C3F1C8971B900E40B14 /* EventTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +562,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -571,6 +600,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -580,11 +610,16 @@
 			baseConfigurationReference = 0098EBA2C1ADB2EE5CEAD1C1 /* Pods-MyCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szy.MyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MyCalendar/Bridging.h;
 			};
 			name = Debug;
 		};
@@ -593,11 +628,16 @@
 			baseConfigurationReference = 7B52C54417171CE664D250C9 /* Pods-MyCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MyCalendar/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szy.MyCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = MyCalendar/Bridging.h;
 			};
 			name = Release;
 		};
@@ -610,6 +650,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szy.MyCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCalendar.app/MyCalendar";
 			};
 			name = Debug;
@@ -623,6 +664,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.szy.MyCalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCalendar.app/MyCalendar";
 			};
 			name = Release;

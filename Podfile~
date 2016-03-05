@@ -4,14 +4,14 @@
 # use_frameworks!
 
 target 'MyCalendar' do
-
+pod 'FSCalendar'
 end
 
 target 'MyCalendarTests' do
-
+pod 'FSCalendar'
 end
 
 target 'MyCalendarUITests' do
-
+pod 'FSCalendar'
 end
 
