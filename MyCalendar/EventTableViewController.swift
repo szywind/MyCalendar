@@ -177,5 +177,4 @@ class EventTableViewController: UITableViewController {
         //self.tableView.reloadData()
     }
     
-    
 }
