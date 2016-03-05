@@ -62,11 +62,17 @@ class CreateEventViewController: UIViewController {
             // ...
             self.createEvent()
             self.eventList.append(self.event!)
-            self.saveEvents()
+            //self.saveEvents()
             
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.saveEvents()
+            })
             
-            self.navigationController!.popToRootViewControllerAnimated(true)
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
 
+            self.navigationController!.popToRootViewControllerAnimated(true)
+            
+            
             //self.view.window!.rootViewController!.navigationController!.popViewControllerAnimated(true)  // for push/show
             //self.dismissViewControllerAnimated(true, completion:nil) // for modal
         }

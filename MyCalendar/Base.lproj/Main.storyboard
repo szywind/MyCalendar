@@ -393,8 +393,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="5xd-S2-8hT" id="8eN-RV-mFB"/>
-                            <outlet property="delegate" destination="5xd-S2-8hT" id="6QB-hj-vw8"/>
+                            <outlet property="dataSource" destination="5xd-S2-8hT" id="bdG-TI-e7g"/>
+                            <outlet property="delegate" destination="5xd-S2-8hT" id="07V-Rd-WwT"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="MDV-98-5MY"/>

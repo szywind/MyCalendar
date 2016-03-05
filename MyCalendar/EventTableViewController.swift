@@ -21,6 +21,8 @@ class EventTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
+        
         // Try loading a saved version first
         if let savedEvents = loadEvents() {
             events += savedEvents
@@ -52,24 +54,21 @@ class EventTableViewController: UITableViewController {
         let currentEvent = events[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
-        var shortDate: String {
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            return dateFormatter.stringFromDate(currentEvent.date)
-        }
+        //dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC");
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
         
-        var shortTime: String {
-            dateFormatter.dateFormat = "HH:MM"
-            return dateFormatter.stringFromDate(currentEvent.time)
-        }
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let shortDate = dateFormatter.stringFromDate(currentEvent.date)
+       
+        dateFormatter.dateFormat = "HH:mm"
+        let shortTime = dateFormatter.stringFromDate(currentEvent.time)
         
-        var startDate = combineDateWithTime(currentEvent.date, time: currentEvent.time)
+        
+        let startDate = combineDateWithTime(currentEvent.date, time: currentEvent.time)
         let endDate = startDate!.dateByAddingTimeInterval(Double(currentEvent.duration) * 60.0)
         
-        var endDateString: String {
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:MM"
-            return dateFormatter.stringFromDate(endDate)
-        }
-       
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let endDateString = dateFormatter.stringFromDate(endDate)
         
         cell!.startTime.text = shortTime
         cell!.startDate.text = shortDate
@@ -77,6 +76,7 @@ class EventTableViewController: UITableViewController {
         cell!.end.text = endDateString
         cell!.location.text = currentEvent.location
         
+        print(NSDateFormatter.localizedStringFromDate(currentEvent.date, dateStyle: .FullStyle, timeStyle: NSDateFormatterStyle.FullStyle))
         return cell!
     }
     
@@ -161,8 +161,21 @@ class EventTableViewController: UITableViewController {
         mergedComponments.day = dateComponents.day
         mergedComponments.hour = timeComponents.hour
         mergedComponments.minute = timeComponents.minute
+        
+        print("foo", timeComponents.hour, timeComponents.minute, timeComponents.second)
+        print("bar", mergedComponments.hour, mergedComponments.minute, mergedComponments.second)
         mergedComponments.second = timeComponents.second
         
         return calendar.dateFromComponents(mergedComponments)
     }
+    
+    func loadList(notification: NSNotification){
+        //load data here
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+        //self.tableView.reloadData()
+    }
+    
+    
 }
