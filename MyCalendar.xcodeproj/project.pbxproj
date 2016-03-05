@@ -21,6 +21,7 @@
 		8E3B2C451C8977C800E40B14 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */; };
 		8E3B2C471C8A055600E40B14 /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C461C8A055600E40B14 /* EventCollection.swift */; };
 		8E3B2C511C8A37A100E40B14 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3B2C501C8A37A100E40B14 /* FSCalendar.framework */; };
+		8E3B2C551C8AAF7A00E40B14 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */; };
 		ABCA0D185BB2863C61F44FDA /* Pods_MyCalendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4CFC416E6E275C16C4A8CF /* Pods_MyCalendarUITests.framework */; };
 		C26121F8D99387C6A1EF9A5C /* Pods_MyCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D8EE7E552F006560394C75 /* Pods_MyCalendar.framework */; };
 		D91EF678DBB08E0AA3E809AB /* Pods_MyCalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1340483A1E3195A1973931E3 /* Pods_MyCalendarTests.framework */; };
@@ -69,9 +70,9 @@
 		8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		8E3B2C461C8A055600E40B14 /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
 		8E3B2C4C1C8A342600E40B14 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = "Pods/../build/Debug-iphoneos/FSCalendar.framework"; sourceTree = "<group>"; };
-		8E3B2C4E1C8A358900E40B14 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
-		8E3B2C4F1C8A35E900E40B14 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8E3B2C501C8A37A100E40B14 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = "Pods/../build/Debug-iphoneos/FSCalendar.framework"; sourceTree = "<group>"; };
+		8E3B2C531C8A792600E40B14 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		ABFCA755606FA3B5B003EF0F /* Pods-MyCalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarUITests/Pods-MyCalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE4CFC416E6E275C16C4A8CF /* Pods_MyCalendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCalendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D431E68059D20954787A5B /* Pods-MyCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCalendarTests/Pods-MyCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,8 +158,8 @@
 				8E3B2C341C89273800E40B14 /* CreateEventViewController.swift */,
 				8E3B2C441C8977C800E40B14 /* EventDetailViewController.swift */,
 				8E3B2C461C8A055600E40B14 /* EventCollection.swift */,
-				8E3B2C4E1C8A358900E40B14 /* Bridging.h */,
-				8E3B2C4F1C8A35E900E40B14 /* Bridging-Header.h */,
+				8E3B2C531C8A792600E40B14 /* Bridging.h */,
+				8E3B2C541C8AAF7A00E40B14 /* EventTableViewCell.swift */,
 			);
 			path = MyCalendar;
 			sourceTree = "<group>";
@@ -458,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3B2C551C8AAF7A00E40B14 /* EventTableViewCell.swift in Sources */,
 				8E3B2C091C88143000E40B14 /* SecondViewController.swift in Sources */,
 				8E3B2C051C88142F00E40B14 /* AppDelegate.swift in Sources */,
 				8E3B2C071C88142F00E40B14 /* FirstViewController.swift in Sources */,

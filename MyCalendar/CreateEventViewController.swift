@@ -12,6 +12,8 @@ class CreateEventViewController: UIViewController {
 
     var event:Event?
     
+    var eventList = [Event]()
+    
     var date: NSDate?
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -32,17 +34,21 @@ class CreateEventViewController: UIViewController {
         event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location!,_detail:  detail!)
     }
     
-    func saveEvent(){
-        if let eventList = EventCollection.loadSaved(){
-            print("number of events:", eventList.items!.count)
-            eventList.items?.append(event!)
-            eventList.save()
-        } else {
-            // Create a new Course List
-            let eventList: EventCollection = EventCollection(items: [event!])
-            eventList.save()
-        }
-    }
+//    func saveEvent(){
+//        var eventList = loadEvents()
+//        if (eventList != nil){
+//            print("number of events:", eventList!.count)
+//            eventList?.append(event!)
+//            saveEvents(eventList!)
+//        } else {
+//            // Create a new Course List
+//            //let eventList: EventCollection = EventCollection(items: [event!])
+//            var events = [Event]()
+//            events.append(event!)
+//            saveEvents(events)
+//        }
+//        
+//    }
     
     @IBAction func onFinished(sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Notification", message: "Do you want to finish creating event.", preferredStyle: .Alert)
@@ -55,9 +61,9 @@ class CreateEventViewController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             // ...
             self.createEvent()
-            self.saveEvent()
+            self.eventList.append(self.event!)
+            self.saveEvents()
             
-            let temp = EventCollection.loadSaved()
             
             self.navigationController!.popToRootViewControllerAnimated(true)
 
@@ -72,6 +78,9 @@ class CreateEventViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let savedEvents = loadEvents() {
+            eventList += savedEvents
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,4 +115,28 @@ class CreateEventViewController: UIViewController {
             slider.value = intensity
         }
     }
+    
+    
+    
+    func saveEvents() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(eventList, toFile: Event.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save events...")
+        }
+    }
+    
+//    func loadEvents() -> [Event]? {
+//        
+//        if let temp = NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]{
+//            return temp
+//        } else {
+//            return nil
+//        }
+//    }
+    
+    func loadEvents() -> [Event]? {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("events")
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]
+    }
+    
 }
