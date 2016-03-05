@@ -19,7 +19,7 @@ class EventDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        detailLabel.text = currentEvent?.date
+        detailLabel.text = String(currentEvent?.date)
     }
 
     override func didReceiveMemoryWarning() {

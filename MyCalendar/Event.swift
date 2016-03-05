@@ -10,13 +10,13 @@ import Foundation
 
 class Event: NSObject, NSCoding {
     var title: String
-    var date: String
-    var time: NSCalendar
+    var date: NSDate
+    var time: NSDate
     var duration: Int
     var location: String
     var detail: String
     
-    init (_title: String, _date: String, _time: NSCalendar, _duration: Int, _location: String, _detail: String){
+    init (_title: String, _date: NSDate, _time: NSDate, _duration: Int, _location: String, _detail: String){
         self.title = _title
         self.date = _date
         self.time = _time
@@ -38,16 +38,16 @@ class Event: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         
         let storedTitle = aDecoder.decodeObjectForKey("eventTile") as? String
-        let storedDate = aDecoder.decodeObjectForKey("eventDate") as? String
-        let storedTime = aDecoder.decodeObjectForKey("eventTime") as? NSCalendar
-        let storedDuration = aDecoder.decodeObjectForKey("eventDuration") as? Int
+        let storedDate = aDecoder.decodeObjectForKey("eventDate") as? NSDate
+        let storedTime = aDecoder.decodeObjectForKey("eventTime") as? NSDate
+        let storedDuration = aDecoder.decodeIntegerForKey("eventDuration")
         let storedLocation = aDecoder.decodeObjectForKey("eventLocation") as? String
         let storedDetail = aDecoder.decodeObjectForKey("eventDetail") as? String
         
-        guard storedTitle != nil && storedDate != nil && storedTime != nil && storedDuration != nil && storedLocation != nil && storedDetail != nil else {
+        guard storedTitle != nil && storedDate != nil && storedTime != nil && storedLocation != nil && storedDetail != nil else {
             return nil
         }
-        self.init(_title: storedTitle!, _date: storedDate!, _time: storedTime!, _duration: storedDuration!, _location: storedLocation!, _detail: storedDetail!)
+        self.init(_title: storedTitle!, _date: storedDate!, _time: storedTime!, _duration: storedDuration, _location: storedLocation!, _detail: storedDetail!)
         
         
     }

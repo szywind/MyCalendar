@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A84ECDF3A926ADE5E007DF5F'
+               BlueprintIdentifier = 'C8F18C04E1EF182BCE15B1AB'
                BlueprintName = 'Pods-MyCalendarUITests'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-MyCalendarUITests.a'>
+               BuildableName = 'Pods_MyCalendarUITests.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

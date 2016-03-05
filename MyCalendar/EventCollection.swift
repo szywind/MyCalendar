@@ -11,24 +11,22 @@ import Foundation
 
 class EventCollection: NSObject, NSCoding {
     
-    var items: [Event]
-//    let sourceURL: NSURL
+    var items: [Event]?
+    
+//    override init() {}
     
     init (items newItems: [Event]) {
         self.items = newItems
-//        self.sourceURL = newURL
         super.init()
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.items, forKey: "feedItems")
-//        aCoder.encodeObject(self.sourceURL, forKey: "feedSourceURL")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         
         let storedItems = aDecoder.decodeObjectForKey("feedItems") as? [Event]
-//        let storedURL = aDecoder.decodeObjectForKey("feedSourceURL") as? NSURL
         
         guard storedItems != nil else {
             return nil
@@ -47,7 +45,8 @@ class EventCollection: NSObject, NSCoding {
     }
     
     class func loadSaved() -> EventCollection? {
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey("EventList") as? NSData {
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey("eventList") as? NSData {
+            var ttt = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? EventCollection
             return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? EventCollection
         }
         return nil

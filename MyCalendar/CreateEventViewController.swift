@@ -12,7 +12,7 @@ class CreateEventViewController: UIViewController {
 
     var event:Event?
     
-    
+    var date: NSDate?
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var durationText: UITextField!
@@ -23,12 +23,25 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     func createEvent(){
-        let time = datePicker.calendar
+        
+        let time = datePicker.date
         let duration = Int(durationText.text!)
         let location = whereText.text
         let title = whatText.text
         let detail = detailText.text
-        event = Event(_title: title!, _date: "abc", _time: time, _duration: duration!, _location: location!,_detail:  detail!)
+        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location!,_detail:  detail!)
+    }
+    
+    func saveEvent(){
+        if let eventList = EventCollection.loadSaved(){
+            print("number of events:", eventList.items!.count)
+            eventList.items?.append(event!)
+            eventList.save()
+        } else {
+            // Create a new Course List
+            let eventList: EventCollection = EventCollection(items: [event!])
+            eventList.save()
+        }
     }
     
     @IBAction func onFinished(sender: UIBarButtonItem) {
@@ -42,6 +55,14 @@ class CreateEventViewController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             // ...
             self.createEvent()
+            self.saveEvent()
+            
+            let temp = EventCollection.loadSaved()
+            
+            self.navigationController!.popToRootViewControllerAnimated(true)
+
+            //self.view.window!.rootViewController!.navigationController!.popViewControllerAnimated(true)  // for push/show
+            //self.dismissViewControllerAnimated(true, completion:nil) // for modal
         }
         alertController.addAction(OKAction)
         
