@@ -12,13 +12,14 @@ class EventTableViewController: UITableViewController {
     
     var events = [Event]()
    
-    @IBOutlet var historyView: UITableView!
+//    @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyView.dataSource = self
-        historyView.delegate = self
         
+//        historyView.dataSource = self
+//        historyView.delegate = self
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,7 +30,9 @@ class EventTableViewController: UITableViewController {
         
         // Try loading a saved version first
         if let savedEvents = loadEvents() {
-            events += savedEvents
+//            events += savedEvents
+            events = savedEvents
+
             print("loaded Save EventList")
         }
         
@@ -178,19 +181,18 @@ class EventTableViewController: UITableViewController {
     
     func loadList(notification: NSNotification){
         //load data here
-        historyView.reloadData()
-//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//            self.tableView.reloadData()
-//        })
-        //self.tableView.reloadData()
+        events = loadEvents()!
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
     }
     
     
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
-        
-        historyView.reloadData()
+        events = loadEvents()!
+        self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
     
