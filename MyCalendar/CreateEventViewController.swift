@@ -28,10 +28,16 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         
         let time = datePicker.date
         let duration = Int(durationText.text!)
-        let location = whereText.text
         let title = whatText.text
         let detail = detailText.text
-        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location!,_detail:  detail!)
+        let temp = whereText.text
+        var location: String
+        if ((temp?.isEmpty) == nil){
+            location = temp!
+        }else{
+            location = "NA"
+        }
+        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location, _detail:  detail!)
     }
     
 //    func saveEvent(){
