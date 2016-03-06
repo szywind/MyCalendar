@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, UITextFieldDelegate {
 
     var event:Event?
     
@@ -19,8 +19,8 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var durationText: UITextField!
     @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var whereText: UITextField!
     @IBOutlet weak var whatText: UITextField!
+    @IBOutlet weak var whereText: UITextField!
     @IBOutlet weak var detailText: UITextField!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
@@ -28,10 +28,14 @@ class CreateEventViewController: UIViewController {
         
         let time = datePicker.date
         let duration = Int(durationText.text!)
-        let location = whereText.text
         let title = whatText.text
         let detail = detailText.text
-        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location!,_detail:  detail!)
+        var location = whereText.text
+        
+        if location == ""{
+            location = "NA"
+        }
+        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location, _detail:  detail!)
     }
     
 //    func saveEvent(){
@@ -64,9 +68,15 @@ class CreateEventViewController: UIViewController {
             self.eventList.append(self.event!)
             self.saveEvents()
             
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                self.saveEvents()
+//            })
             
-            self.navigationController!.popToRootViewControllerAnimated(true)
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
 
+            self.navigationController!.popToRootViewControllerAnimated(true)
+            
+            
             //self.view.window!.rootViewController!.navigationController!.popViewControllerAnimated(true)  // for push/show
             //self.dismissViewControllerAnimated(true, completion:nil) // for modal
         }
@@ -81,6 +91,8 @@ class CreateEventViewController: UIViewController {
         if let savedEvents = loadEvents() {
             eventList += savedEvents
         }
+        
+        checkValidEventInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,7 +128,11 @@ class CreateEventViewController: UIViewController {
         }
     }
     
-    
+    func checkValidEventInfo() {
+        // Disable the Save button if the text field is empty.
+        let text = whatText.text ?? ""
+        doneButton.enabled = !text.isEmpty
+    }
     
     func saveEvents() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(eventList, toFile: Event.ArchiveURL.path!)
@@ -125,18 +141,14 @@ class CreateEventViewController: UIViewController {
         }
     }
     
-//    func loadEvents() -> [Event]? {
-//        
-//        if let temp = NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]{
-//            return temp
-//        } else {
-//            return nil
-//        }
-//    }
     
     func loadEvents() -> [Event]? {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("events")
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidEventInfo()
     }
     
 }
