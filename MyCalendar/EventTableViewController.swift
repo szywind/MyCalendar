@@ -11,10 +11,14 @@ import UIKit
 class EventTableViewController: UITableViewController {
     
     var events = [Event]()
+   
+    @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        historyView.dataSource = self
+        historyView.delegate = self
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,6 +32,9 @@ class EventTableViewController: UITableViewController {
             events += savedEvents
             print("loaded Save EventList")
         }
+        
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -171,10 +178,20 @@ class EventTableViewController: UITableViewController {
     
     func loadList(notification: NSNotification){
         //load data here
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.tableView.reloadData()
-        })
+        historyView.reloadData()
+//        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//            self.tableView.reloadData()
+//        })
         //self.tableView.reloadData()
+    }
+    
+    
+    func refresh(sender:AnyObject)
+    {
+        // Updating your data here...
+        
+        historyView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
 }
