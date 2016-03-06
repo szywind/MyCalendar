@@ -30,11 +30,9 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         let duration = Int(durationText.text!)
         let title = whatText.text
         let detail = detailText.text
-        let temp = whereText.text
-        var location: String
-        if ((temp?.isEmpty) == nil){
-            location = temp!
-        }else{
+        var location = whereText.text
+        
+        if location == ""{
             location = "NA"
         }
         event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location, _detail:  detail!)
