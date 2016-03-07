@@ -61,7 +61,10 @@ class EventTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as? EventTableViewCell
         // Configure the cell...
-        let currentEvent = events[indexPath.row]
+        // let currentEvent = events[indexPath.row]
+        
+        var sortedEvents = events.sort({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
+        let currentEvent = sortedEvents[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
         //dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC");
