@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "createEvent()"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
             <Locations>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479026325.862537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "loadEvents()"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/Event.swift"
-            timestampString = "478843390.098164"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "Event"
             landmarkType = "3">
             <Locations>
@@ -329,11 +329,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -345,11 +345,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "saveEvents()"
             landmarkType = "5">
          </BreakpointContent>
@@ -361,11 +361,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "loadEvents()"
             landmarkType = "5">
          </BreakpointContent>
@@ -377,11 +377,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/Event.swift"
-            timestampString = "478846020.259884"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -393,11 +393,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/Event.swift"
-            timestampString = "478846020.259884"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -409,7 +409,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/Event.swift"
-            timestampString = "478846020.259884"
+            timestampString = "479024722.938539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "encodeWithCoder(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCalendar/Event.swift"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -425,27 +441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/Event.swift"
-            timestampString = "478846020.259884"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "encodeWithCoder(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCalendar/Event.swift"
-            timestampString = "478846020.259884"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -457,11 +457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "createEvent()"
             landmarkType = "5">
          </BreakpointContent>
@@ -473,11 +473,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -521,11 +521,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -533,7 +533,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
@@ -553,11 +553,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -569,11 +569,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -585,7 +585,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479025998.132909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -600,44 +600,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "combineDateWithTime(_:time:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "combineDateWithTime(_:time:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -649,27 +617,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "onFinished(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCalendar/CreateEventViewController.swift"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "onFinished(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
             landmarkName = "onFinished(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -697,11 +665,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479026325.862537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "loadList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -713,11 +681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/EventTableViewController.swift"
-            timestampString = "479023937.551434"
+            timestampString = "479026325.862537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "loadList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -729,11 +697,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "createEvent()"
             landmarkType = "5">
          </BreakpointContent>
@@ -745,27 +713,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "createEvent()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCalendar/CreateEventViewController.swift"
-            timestampString = "478951228.041049"
+            timestampString = "479024722.938539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
+            landmarkName = "createEvent()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCalendar/CreateEventViewController.swift"
+            timestampString = "479024722.938539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "createEvent()"
             landmarkType = "5">
          </BreakpointContent>
