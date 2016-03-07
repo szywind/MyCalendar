@@ -61,21 +61,23 @@ class EventTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as? EventTableViewCell
         // Configure the cell...
-        let currentEvent = events[indexPath.row]
+        // let currentEvent = events[indexPath.row]
+        
+        var sortedEvents = events.sort({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
+        let currentEvent = sortedEvents[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
         //dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC");
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
         
+        let startDate = currentEvent.date
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let shortDate = dateFormatter.stringFromDate(currentEvent.date)
+        let shortDate = dateFormatter.stringFromDate(startDate)
        
         dateFormatter.dateFormat = "HH:mm"
-        let shortTime = dateFormatter.stringFromDate(currentEvent.time)
+        let shortTime = dateFormatter.stringFromDate(startDate)
         
-        
-        let startDate = combineDateWithTime(currentEvent.date, time: currentEvent.time)
-        let endDate = startDate!.dateByAddingTimeInterval(Double(currentEvent.duration) * 60.0)
+        let endDate = startDate.dateByAddingTimeInterval(Double(currentEvent.duration) * 60.0)
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let endDateString = dateFormatter.stringFromDate(endDate)
@@ -85,6 +87,34 @@ class EventTableViewController: UITableViewController {
         cell!.title.text = currentEvent.title
         cell!.end.text = endDateString
         cell!.location.text = currentEvent.location
+        
+        let now = NSDate()
+        
+        let timeToStart = NSCalendar.currentCalendar().compareDate(now, toDate: startDate,
+            toUnitGranularity: .Minute)
+        
+        let timeToEnd = NSCalendar.currentCalendar().compareDate(now, toDate: endDate,
+            toUnitGranularity: .Minute)
+        
+        if timeToStart != .OrderedDescending{
+            cell!.backgroundColor = UIColor(colorLiteralRed: 0, green: 0xFF, blue: 0, alpha: 0.5)
+        } else if(timeToEnd != .OrderedDescending){
+            cell!.backgroundColor = UIColor(colorLiteralRed: 0xFF, green: 0xFF, blue: 0, alpha: 0.5)
+        } else{
+            cell!.backgroundColor = UIColor(colorLiteralRed: 0xFF, green: 0, blue: 0, alpha: 0.5)
+        }
+        
+//        switch timeToStart {
+//        case .OrderedDescending:
+//            print("DESCENDING")
+//        case .OrderedAscending:
+//            print("ASCENDING")
+//        case .OrderedSame:
+//            print("SAME")
+//        }
+        
+        
+        
         
         print(NSDateFormatter.localizedStringFromDate(currentEvent.date, dateStyle: .FullStyle, timeStyle: NSDateFormatterStyle.FullStyle))
         return cell!
@@ -159,25 +189,6 @@ class EventTableViewController: UITableViewController {
         
     }
     
-    func combineDateWithTime(date: NSDate, time: NSDate) -> NSDate? {
-        let calendar = NSCalendar.currentCalendar()
-        
-        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
-        let timeComponents = calendar.components([.Hour, .Minute, .Second], fromDate: time)
-        
-        let mergedComponments = NSDateComponents()
-        mergedComponments.year = dateComponents.year
-        mergedComponments.month = dateComponents.month
-        mergedComponments.day = dateComponents.day
-        mergedComponments.hour = timeComponents.hour
-        mergedComponments.minute = timeComponents.minute
-        
-        print("foo", timeComponents.hour, timeComponents.minute, timeComponents.second)
-        print("bar", mergedComponments.hour, mergedComponments.minute, mergedComponments.second)
-        mergedComponments.second = timeComponents.second
-        
-        return calendar.dateFromComponents(mergedComponments)
-    }
     
     func loadList(notification: NSNotification){
         //load data here

@@ -32,10 +32,13 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         let detail = detailText.text
         var location = whereText.text
         
+        // combine picked date and chosen time
+        let startDate = combineDateWithTime(self.date!, time: time)
+        
         if location == ""{
             location = "NA"
         }
-        event = Event(_title: title!, _date: date!, _time: time, _duration: duration!, _location: location, _detail:  detail!)
+        event = Event(_title: title!, _date: startDate!, _duration: duration!, _location: location, _detail:  detail!)
     }
     
 //    func saveEvent(){
@@ -151,4 +154,24 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         checkValidEventInfo()
     }
     
+    func combineDateWithTime(date: NSDate, time: NSDate) -> NSDate? {
+        let calendar = NSCalendar.currentCalendar()
+        
+        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
+        let timeComponents = calendar.components([.Hour, .Minute, .Second], fromDate: time)
+        
+        let mergedComponments = NSDateComponents()
+        mergedComponments.year = dateComponents.year
+        mergedComponments.month = dateComponents.month
+        mergedComponments.day = dateComponents.day
+        mergedComponments.hour = timeComponents.hour
+        mergedComponments.minute = timeComponents.minute
+        
+        print("foo", timeComponents.hour, timeComponents.minute, timeComponents.second)
+        print("bar", mergedComponments.hour, mergedComponments.minute, mergedComponments.second)
+        mergedComponments.second = timeComponents.second
+        
+        return calendar.dateFromComponents(mergedComponments)
+    }
+        
 }
