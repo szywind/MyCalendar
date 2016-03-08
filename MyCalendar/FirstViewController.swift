@@ -29,6 +29,10 @@ class FirstViewController: UIViewController {
             if let destination = segue.destinationViewController as? CreateEventViewController{
                 destination.date = calendar.selectedDate ?? NSDate()
             }
+        } else if (segue.identifier == "todayEvent"){
+            if let destination = segue.destinationViewController as? TodayEventTableViewController{
+                destination.date = calendar.selectedDate ?? NSDate()
+            }
         }
     }
 
