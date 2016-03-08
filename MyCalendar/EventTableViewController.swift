@@ -14,6 +14,9 @@ class EventTableViewController: UITableViewController {
    
 //    @IBOutlet var historyView: UITableView!
     
+    func setEditButton(){
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +27,7 @@ class EventTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        setEditButton()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name:"load", object: nil)
         
@@ -54,7 +57,8 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return events.count
+        let tmp_events = filterTodayEvent(events)
+        return tmp_events.count
     }
 
     
@@ -63,7 +67,9 @@ class EventTableViewController: UITableViewController {
         // Configure the cell...
         // let currentEvent = events[indexPath.row]
         
-        var sortedEvents = events.sort({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
+        let tmp_events = filterTodayEvent(events)
+        
+        var sortedEvents = tmp_events.sort({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
         let currentEvent = sortedEvents[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
@@ -136,6 +142,7 @@ class EventTableViewController: UITableViewController {
             // Delete the row from the data source
             events.removeAtIndex(indexPath.row)
             saveEvents()
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -205,6 +212,10 @@ class EventTableViewController: UITableViewController {
         events = loadEvents()!
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
+    }
+    
+    func filterTodayEvent(allEvents: [Event])->[Event]{
+        return allEvents
     }
     
 }

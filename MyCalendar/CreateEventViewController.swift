@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEventViewController: UIViewController, UITextFieldDelegate {
+class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     var event:Event?
     
@@ -16,12 +16,14 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
     
     var date: NSDate?
     
+    let placeHolderText = "Enter event descriptions ..."
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var durationText: UITextField!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var whatText: UITextField!
     @IBOutlet weak var whereText: UITextField!
-    @IBOutlet weak var detailText: UITextField!
+    @IBOutlet weak var detailText: UITextView!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     func createEvent(){
@@ -76,7 +78,10 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
 //            })
             
             NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+            
             self.navigationController!.popToRootViewControllerAnimated(true)
             
             
@@ -96,6 +101,12 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         }
         
         checkValidEventInfo()
+        
+        detailText.layer.borderColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0).CGColor
+        detailText.layer.borderWidth = 0.5
+        detailText.layer.cornerRadius = 5.0
+        detailText.text = placeHolderText
+        detailText.textColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,6 +130,101 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        return false
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.view.frame.origin.y -= 150
+        return true
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        self.view.frame.origin.y += 150
+        return true
+    }
+
+
+    // text view delegate
+//    func keyboardWasShown(aNotifcation: NSNotification) {
+//        
+//        let info = aNotifcation.userInfo as NSDictionary?
+//        let rectValue = info![UIKeyboardFrameBeginUserInfoKey] as! NSValue
+//        let rect = rectValue.CGRectValue()
+//        
+//        let contentInsets = UIEdgeInsetsMake(0, 0, kbSize.height, 0)
+//        detailText.contentInset = contentInsets
+//        detailText.scrollIndicatorInsets = contentInsets
+//        
+//        // optionally scroll
+//        var aRect = detailText.superview!.frame
+//        aRect.size.height -= kbSize.height
+//        let targetRect = CGRectMake(0, 0, 10, 10) // get a relevant rect in the text view
+//        if !aRect.contains(targetRect.origin) {
+//            detailText.scrollRectToVisible(targetRect, animated: true)
+//        }
+//    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        let info = sender.userInfo as NSDictionary?
+        let rectValue = info![UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let rect = rectValue.CGRectValue()
+
+        
+                let contentInsets = UIEdgeInsetsMake(0, 0, rect.height, 0)
+                detailText.contentInset = contentInsets
+                detailText.scrollIndicatorInsets = contentInsets
+        
+                // optionally scroll
+                var aRect = detailText.superview!.frame
+                aRect.size.height -= rect.height
+                let targetRect = CGRectMake(0, 0, 10, 10) // get a relevant rect in the text view
+                if !aRect.contains(targetRect.origin) {
+                    detailText.scrollRectToVisible(targetRect, animated: true)
+                }
+        
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let info = sender.userInfo as NSDictionary?
+        let rectValue = info![UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let rect = rectValue.CGRectValue()
+        var frame = detailText.frame;
+        frame.origin.y = frame.origin.y + rect.height;
+        detailText.frame = frame;
+    }
+    
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        self.view.frame.origin.y -= 150
+        //NSNotificationCenter.defaultCenter().postNotificationName("keyboardWillShow", object: nil)
+        detailText.textColor = UIColor.blackColor()
+        
+        if(detailText.text == placeHolderText) {
+            detailText.text = ""
+        }
+        
+        return true
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        self.view.frame.origin.y += 150
+        //NSNotificationCenter.defaultCenter().postNotificationName("keyboardWillHide", object: nil)
+        if(textView.text == "") {
+            detailText.text = placeHolderText
+            detailText.textColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        }
+    }
+    
 
     @IBAction func onChangeValue(sender: UISlider) {
         let intensity = Int(round(slider.value))
