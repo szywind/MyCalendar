@@ -12,6 +12,8 @@ class TodayEventTableViewController: EventTableViewController {
 
     var date: NSDate?
     
+    var eventsIndex = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +41,19 @@ class TodayEventTableViewController: EventTableViewController {
     }
     
     override func filterTodayEvent(allEvents: [Event])->[Event]{
+        if eventsIndex.count > 0 {
+            eventsIndex = [Int]()
+            assert(eventsIndex.count == 0)
+        }
         var todayEvent = [Event]()
+        var i = 0
         for event in allEvents{
             let isSameDay = NSCalendar.currentCalendar().isDate(event.date, inSameDayAsDate: self.date!)
             if isSameDay {
                 todayEvent.append(event)
+                eventsIndex.append(i)
             }
+            i++
         }
         return todayEvent
     }
@@ -53,7 +62,8 @@ class TodayEventTableViewController: EventTableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            events.removeAtIndex(indexPath.row)
+            tmp_events.removeAtIndex(indexPath.row)
+            events.removeAtIndex(eventsIndex[indexPath.row])
             saveEvents()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
