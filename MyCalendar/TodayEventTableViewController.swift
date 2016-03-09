@@ -62,7 +62,7 @@ class TodayEventTableViewController: EventTableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tmp_events.removeAtIndex(indexPath.row)
+            filtered_events.removeAtIndex(indexPath.row)
             events.removeAtIndex(eventsIndex[indexPath.row])
             saveEvents()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

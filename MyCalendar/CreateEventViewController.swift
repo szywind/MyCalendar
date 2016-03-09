@@ -16,7 +16,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     var date: NSDate?
     
-    let placeHolderText = "Enter event descriptions ..."
+    static let placeHolderText = "Enter event descriptions ..."
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var durationText: UITextField!
@@ -105,7 +105,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         detailText.layer.borderColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0).CGColor
         detailText.layer.borderWidth = 0.5
         detailText.layer.cornerRadius = 5.0
-        detailText.text = placeHolderText
+        detailText.text = CreateEventViewController.placeHolderText
         detailText.textColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
     }
 
@@ -209,7 +209,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         //NSNotificationCenter.defaultCenter().postNotificationName("keyboardWillShow", object: nil)
         detailText.textColor = UIColor.blackColor()
         
-        if(detailText.text == placeHolderText) {
+        if(detailText.text == CreateEventViewController.placeHolderText) {
             detailText.text = ""
         }
         
@@ -220,7 +220,7 @@ class CreateEventViewController: UIViewController, UITextFieldDelegate, UITextVi
         self.view.frame.origin.y += 150
         //NSNotificationCenter.defaultCenter().postNotificationName("keyboardWillHide", object: nil)
         if(textView.text == "") {
-            detailText.text = placeHolderText
+            detailText.text = CreateEventViewController.placeHolderText
             detailText.textColor = UIColor(colorLiteralRed: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
         }
     }
