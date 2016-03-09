@@ -21,7 +21,13 @@ class EventDetailViewController: UIViewController {
         detail.layer.borderColor = UIColor.lightGrayColor().CGColor
         detail.layer.borderWidth = 1.0
         detail.layer.cornerRadius = 5.0
-        detail.text = currentEvent!.detail
+        
+        let placeHolderText = CreateEventViewController.placeHolderText
+        if currentEvent!.detail != placeHolderText {
+            detail.text = currentEvent!.detail
+        } else {
+            detail.text = "None"
+        }
     }
 
     override func didReceiveMemoryWarning() {

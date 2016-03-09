@@ -12,8 +12,8 @@ class EventTableViewController: UITableViewController {
     
     var events = [Event]()
    
-//    @IBOutlet var historyView: UITableView!
-    
+    var filtered_events = [Event]()
+        
     func setEditButton(){
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
@@ -35,7 +35,7 @@ class EventTableViewController: UITableViewController {
         if let savedEvents = loadEvents() {
 //            events += savedEvents
             events = savedEvents
-
+            
             print("loaded Save EventList")
         }
         
@@ -57,8 +57,7 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let tmp_events = filterTodayEvent(events)
-        return tmp_events.count
+        return filtered_events.count
     }
 
     
@@ -67,10 +66,7 @@ class EventTableViewController: UITableViewController {
         // Configure the cell...
         // let currentEvent = events[indexPath.row]
         
-        let tmp_events = filterTodayEvent(events)
-        
-        var sortedEvents = tmp_events.sort({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
-        let currentEvent = sortedEvents[indexPath.row]
+        let currentEvent = filtered_events[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
         //dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC");
@@ -188,7 +184,9 @@ class EventTableViewController: UITableViewController {
     }
     
     func loadEvents() -> [Event]? {
-        if let temp = NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]{
+        if var temp = NSKeyedUnarchiver.unarchiveObjectWithFile(Event.ArchiveURL.path!) as? [Event]{
+            temp.sortInPlace({ $0.date.compare($1.date) == NSComparisonResult.OrderedDescending })
+            filtered_events = filterTodayEvent(temp)
             return temp
         } else {
             return nil
@@ -200,6 +198,7 @@ class EventTableViewController: UITableViewController {
     func loadList(notification: NSNotification){
         //load data here
         events = loadEvents()!
+
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
         })
@@ -210,11 +209,14 @@ class EventTableViewController: UITableViewController {
     {
         // Updating your data here...
         events = loadEvents()!
+
+        
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
     
     func filterTodayEvent(allEvents: [Event])->[Event]{
+        
         return allEvents
     }
     
